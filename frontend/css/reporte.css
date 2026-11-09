@@ -1,0 +1,125 @@
+
+
+*{ margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+body{ background:#f5f7fa; }
+
+
+header{ background:#003b78; color:white; padding:20px 8%; display:flex; justify-content:space-between; align-items:center; }
+.logo h1{ font-size:32px; }
+
+.logo span{ color:#ff7a00; }
+
+nav ul{ display:flex; list-style:none; gap:30px; }
+
+nav a{ color:white; text-decoration:none; font-weight:500; }
+
+.buscador{ display:flex; }
+
+.buscador input{ padding:10px; border:none; border-radius:8px 0 0 8px; }
+
+.buscador button{ background:#ff7a00; color:white; border:none; padding:10px 15px; border-radius:0 8px 8px 0; cursor:pointer; }
+
+/* HERO */
+.hero{ display:flex; align-items:center; justify-content:space-between; background:#003b78; color:white; padding:60px 8%; }
+.hero-texto{ width:45%; }
+
+.hero-texto h2{ font-size:60px; line-height:1.1; }
+
+.hero-texto p{ margin:25px 0; font-size:20px; }
+
+.hero-imagen{ width:50%; }
+
+.hero-imagen img{ width:100%; border-radius:25px; }
+
+.botones{ display:flex; gap:15px; }
+
+.btn{ text-decoration:none; padding:14px 28px; border-radius:10px; font-weight:600; }
+
+.naranja{ background:#ff7a00; color:white; }
+
+.transparente{ border:2px solid white; color:white; }
+
+
+.murales{ padding:60px 8%; }
+
+.murales h2{ color:#003b78; margin-bottom:30px; }
+
+.filtros-categorias { display: flex; gap: 12px; margin-bottom: 35px; flex-wrap: wrap; }
+
+.btn-categoria { text-decoration: none; padding: 10px 20px; border: 2px solid #003b78; color: #003b78; border-radius: 8px; font-weight: 600; font-size: 14px; transition: all 0.3s ease; }
+.btn-categoria:hover { background: #003b78; color: white; }
+
+.grid-murales{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
+
+
+footer{ background:#003b78; color:white; text-align:center; padding:40px; }
+footer h3{ color:#ff7a00; margin-bottom:10px; }
+.redes{ margin-top:20px; }
+.redes i{ font-size:28px; margin:0 10px; cursor:pointer; }
+
+.btn-posicion{ position: fixed; bottom: 20px; right: 20px; background: #ff7a00; color: white; text-decoration: none; padding: 14px 18px; border-radius: 50px; font-weight: 600; box-shadow: 0 4px 12px rgba(0,0,0,.3); z-index: 999; display: flex; align-items: center; gap: 8px; }
+
+
+.btn-registro-header { background: #ff6600; color: white; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: bold; display: inline-flex; align-items: center; gap: 6px; margin-left: 10px; }
+.modal-simple { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 2000; justify-content: center; align-items: center; }
+.modal-caja { background: white; padding: 30px; border-radius: 8px; width: 100%; max-width: 320px; position: relative; }
+.cerrar-x { position: absolute; top: 10px; right: 15px; font-size: 26px; cursor: pointer; color: #888; }
+#form-registro-simple { display: flex; flex-direction: column; gap: 8px; margin-top: 15px; }
+#form-registro-simple input { padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+.btn-registrar { background: #2d3748; color: white; border: none; padding: 12px; border-radius: 4px; cursor: pointer; font-weight: bold; margin-top: 10px; }
+#cambiar-registro:checked ~ .modal-simple { display: flex; }
+
+.btn-admin-header { background: #003b78; color: white; padding: 8px 16px; border: 2px solid #ff7a00; border-radius: 4px; cursor: pointer; font-weight: bold; display: inline-flex; align-items: center; gap: 6px; margin-left: 10px; }
+.btn-admin-header:hover { background: #ff7a00; }
+.modal-admin { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 2001; justify-content: center; align-items: center; }
+#cambiar-registro-admin:checked ~ .modal-admin { display: flex; }
+.modal-caja-admin { background: white; padding: 30px; border-radius: 8px; width: 100%; max-width: 360px; position: relative; }
+.cerrar-x-admin { position: absolute; top: 10px; right: 15px; font-size: 26px; cursor: pointer; color: #888; }
+.cerrar-x-admin:hover { color: #003b78; }
+#form-registro-admin { display: flex; flex-direction: column; gap: 8px; margin-top: 15px; }
+#form-registro-admin input { padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+#form-registro-admin input:focus { border-color: #003b78; outline: none; }
+.btn-registrar-admin { background: #003b78; color: white; border: none; padding: 12px; border-radius: 4px; cursor: pointer; font-weight: bold; margin-top: 10px; }
+.btn-registrar-admin:hover { background: #ff7a00; }
+
+/* RESPONSIVE */
+@media (max-width: 992px){ header{ flex-direction: column; gap: 20px; } .hero{ flex-direction: column; text-align: center; } .hero-texto, .hero-imagen{ width: 100%; } .hero-texto h2{ font-size: 42px; } }
+@media (max-width: 768px){ header{ padding:20px 5%; } nav ul{ flex-direction:column; align-items:center; gap:12px; } .buscador{ width:100%; } .buscador input{ width:100%; } .hero{ flex-direction:column; padding:40px 5%; text-align:center; } .hero-imagen{ margin-top:25px; } .hero-texto h2{ font-size:32px; } .hero-texto p{ font-size:16px; } .botones{ flex-direction:column; align-items:center; } .btn{ width:100%; text-align:center; } .filtros-categorias { justify-content: center; } .btn-categoria { width: calc(50% - 6px); text-align: center; } .grid-murales{ grid-template-columns:1fr; }.card img{ height:250px; } }
+@media (max-width:480px){ .logo h1{ font-size:24px; text-align:center; } .hero-texto h2{ font-size:28px; } .hero-texto p{ font-size:15px; } .btn-admin-header, .btn-registro-header{ margin-left:0; } }
+
+.logo h1 a {
+    color: inherit;
+    text-decoration: none;
+} 
+
+
+
+.seccion-reporte { padding: 60px 8%; min-height: 650px; background: #f5f7fa; }
+.contenedor-reporte { max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 18px rgba(0,0,0,.12); }
+.contenedor-reporte h2 { color: #003b78; font-size: 32px; margin-bottom: 10px; }
+.intro-reporte { color: #555; margin-bottom: 30px; }
+.form-reporte { display: flex; flex-direction: column; gap: 24px; }
+.campo-reporte { display: flex; flex-direction: column; gap: 9px; }
+.campo-reporte > label { color: #003b78; font-weight: 700; }
+.campo-reporte input[type="text"], .campo-reporte textarea { width: 100%; padding: 13px; border: 1px solid #ccc; border-radius: 8px; font-size: 15px; outline: none; }
+.campo-reporte input[type="text"]:focus, .campo-reporte textarea:focus { border-color: #003b78; box-shadow: 0 0 0 2px rgba(0,59,120,.1); }
+.campo-reporte textarea { resize: vertical; min-height: 150px; }
+.opciones-reporte { display: flex; flex-direction: column; gap: 10px; }
+.opcion-reporte { display: flex; align-items: flex-start; gap: 12px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; transition: .2s; }
+.opcion-reporte:hover { border-color: #003b78; background: #f7faff; }
+.opcion-reporte input { margin-top: 4px; accent-color: #ff7a00; }
+.opcion-reporte span { display: flex; flex-direction: column; gap: 4px; }
+.opcion-reporte strong { color: #003b78; }
+.opcion-reporte small { color: #666; }
+.archivo-reporte { padding: 12px; border: 1px dashed #aaa; border-radius: 8px; background: #fafafa; }
+.campo-reporte select { width: 100%; padding: 13px; border: 1px solid #ccc; border-radius: 8px; font-size: 15px; outline: none; background: white; }
+.campo-reporte select:focus { border-color: #003b78; box-shadow: 0 0 0 2px rgba(0,59,120,.1); }
+.boton-enviar-reporte { align-self: flex-end; background: #ff7a00; color: white; border: none; padding: 13px 28px; border-radius: 8px; font-weight: 700; font-size: 16px; cursor: pointer; transition: .2s; }
+.boton-enviar-reporte:hover { background: #e96800; }
+.boton-enviar-reporte:disabled { opacity: .6; cursor: not-allowed; }
+
+/* Mensaje de resultado del envío (igual patrón que Administrar Murales) */
+.mensaje-reporte { padding: 12px 16px; border-radius: 8px; font-size: 14px; font-weight: 600; }
+.mensaje-reporte-exito { background: #e6f7ec; color: #1a7f4b; }
+.mensaje-reporte-error { background: #fde8e8; color: #c53030; }
+@media (max-width: 768px) { .seccion-reporte { padding: 40px 5%; } .contenedor-reporte { padding: 25px 20px; } .contenedor-reporte h2 { font-size: 27px; } .boton-enviar-reporte { width: 100%; } }

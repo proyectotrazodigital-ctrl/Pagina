@@ -1,0 +1,457 @@
+
+.accesibilidad {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 3000;
+}
+
+#boton-accesibilidad {
+    border: 0;
+    background: #ff7a00;
+    color: #ffffff;
+    padding: 13px 18px;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,.30);
+}
+
+#boton-accesibilidad:hover,
+#boton-accesibilidad:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 2px;
+}
+
+#menu-accesibilidad {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: 58px;
+    width: 245px;
+    padding: 10px;
+    background: #ffffff;
+    border: 2px solid #003b78;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.28);
+}
+
+#menu-accesibilidad.mostrar {
+    display: block;
+}
+
+.opcion-daltonismo {
+    display: block;
+    width: 100%;
+    padding: 11px 12px;
+    margin: 4px 0;
+    border: 0;
+    border-radius: 8px;
+    background: #f1f3f5;
+    color: #111111;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+}
+
+.opcion-daltonismo:hover,
+.opcion-daltonismo:focus-visible {
+    background: #dfe5ea;
+    outline: 2px solid #003b78;
+    outline-offset: 1px;
+}
+
+
+.opcion-daltonismo[aria-pressed="true"] {
+    background: #003b78;
+    color: #ffffff;
+}
+
+body.modo-protanopia {
+    --ac-fondo: #f4f7f8;
+    --ac-principal: #005f73;
+    --ac-secundario: #0a9396;
+    --ac-acento: #e9c46a;
+    --ac-acento-texto: #1d1d1d;
+    --ac-oscuro: #17324d;
+    --ac-claro: #e7f1f4;
+}
+
+body.modo-protanopia header,
+body.modo-protanopia footer,
+body.modo-protanopia .hero,
+body.modo-protanopia .hero-murales {
+    background: var(--ac-principal) !important;
+}
+
+body.modo-protanopia {
+    background: var(--ac-fondo) !important;
+}
+
+body.modo-protanopia .naranja,
+body.modo-protanopia .btn-registro-header,
+body.modo-protanopia .btn-posicion,
+body.modo-protanopia .btn-detalle,
+body.modo-protanopia .btn-categoria.activo {
+    background: var(--ac-acento) !important;
+    border-color: var(--ac-acento) !important;
+    color: var(--ac-acento-texto) !important;
+}
+
+body.modo-protanopia .logo span { color: var(--ac-acento) !important; background: transparent !important; }
+
+body.modo-protanopia .murales h2,
+body.modo-protanopia .autores h2,
+body.modo-protanopia .btn-categoria,
+body.modo-protanopia .info-extra h4 {
+    color: var(--ac-principal) !important;
+}
+
+body.modo-protanopia .btn-categoria {
+    border-color: var(--ac-principal) !important;
+}
+
+body.modo-protanopia .etiqueta {
+    background: var(--ac-claro) !important;
+    color: var(--ac-oscuro) !important;
+}
+
+body.modo-protanopia .autores {
+    background: #e8f0f3 !important;
+}
+
+
+body.modo-deuteranopia {
+    --ac-fondo: #f5f7f8;
+    --ac-principal: #264653;
+    --ac-secundario: #287271;
+    --ac-acento: #f4c95d;
+    --ac-acento-texto: #1d1d1d;
+    --ac-oscuro: #18323c;
+    --ac-claro: #e5f0f1;
+}
+
+body.modo-deuteranopia header,
+body.modo-deuteranopia footer,
+body.modo-deuteranopia .hero,
+body.modo-deuteranopia .hero-murales {
+    background: var(--ac-principal) !important;
+}
+
+body.modo-deuteranopia {
+    background: var(--ac-fondo) !important;
+}
+
+body.modo-deuteranopia .naranja,
+body.modo-deuteranopia .btn-registro-header,
+body.modo-deuteranopia .btn-posicion,
+body.modo-deuteranopia .btn-detalle,
+body.modo-deuteranopia .btn-categoria.activo {
+    background: var(--ac-acento) !important;
+    border-color: var(--ac-acento) !important;
+    color: var(--ac-acento-texto) !important;
+}
+
+body.modo-deuteranopia .logo span { color: var(--ac-acento) !important; background: transparent !important; }
+
+body.modo-deuteranopia .murales h2,
+body.modo-deuteranopia .autores h2,
+body.modo-deuteranopia .btn-categoria,
+body.modo-deuteranopia .info-extra h4 {
+    color: var(--ac-principal) !important;
+}
+
+body.modo-deuteranopia .btn-categoria {
+    border-color: var(--ac-principal) !important;
+}
+
+body.modo-deuteranopia .etiqueta {
+    background: var(--ac-claro) !important;
+    color: var(--ac-oscuro) !important;
+}
+
+body.modo-deuteranopia .autores {
+    background: #e7eff0 !important;
+}
+
+
+body.modo-tritanopia {
+    --ac-fondo: #f8f5f1;
+    --ac-principal: #5b2c83;
+    --ac-secundario: #7a3e9d;
+    --ac-acento: #e76f51;
+    --ac-acento-texto: #ffffff;
+    --ac-oscuro: #321c47;
+    --ac-claro: #f0e5f6;
+}
+
+body.modo-tritanopia header,
+body.modo-tritanopia footer,
+body.modo-tritanopia .hero,
+body.modo-tritanopia .hero-murales {
+    background: var(--ac-principal) !important;
+}
+
+body.modo-tritanopia {
+    background: var(--ac-fondo) !important;
+}
+
+body.modo-tritanopia .naranja,
+body.modo-tritanopia .btn-registro-header,
+body.modo-tritanopia .btn-posicion,
+body.modo-tritanopia .btn-detalle,
+body.modo-tritanopia .btn-categoria.activo {
+    background: var(--ac-acento) !important;
+    border-color: var(--ac-acento) !important;
+    color: var(--ac-acento-texto) !important;
+}
+
+body.modo-tritanopia .logo span { color: var(--ac-acento) !important; background: transparent !important; }
+
+body.modo-tritanopia .murales h2,
+body.modo-tritanopia .autores h2,
+body.modo-tritanopia .btn-categoria,
+body.modo-tritanopia .info-extra h4 {
+    color: var(--ac-principal) !important;
+}
+
+body.modo-tritanopia .btn-categoria {
+    border-color: var(--ac-principal) !important;
+}
+
+body.modo-tritanopia .etiqueta {
+    background: var(--ac-claro) !important;
+    color: var(--ac-oscuro) !important;
+}
+
+body.modo-tritanopia .autores {
+    background: #eee6f2 !important;
+}
+
+
+body.modo-acromatopsia {
+    background: #eeeeee !important;
+    color: #111111 !important;
+}
+
+body.modo-acromatopsia header,
+body.modo-acromatopsia footer,
+body.modo-acromatopsia .hero,
+body.modo-acromatopsia .hero-murales {
+    background: #111111 !important;
+    color: #ffffff !important;
+}
+
+body.modo-acromatopsia .naranja,
+body.modo-acromatopsia .btn-registro-header,
+body.modo-acromatopsia .btn-posicion,
+body.modo-acromatopsia .btn-detalle,
+body.modo-acromatopsia .btn-categoria.activo {
+    background: #000000 !important;
+    border-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+body.modo-acromatopsia .logo span { color: #ffffff !important; background: transparent !important; }
+
+body.modo-acromatopsia .murales h2,
+body.modo-acromatopsia .autores h2,
+body.modo-acromatopsia .btn-categoria,
+body.modo-acromatopsia .info-extra h4 {
+    color: #111111 !important;
+}
+
+body.modo-acromatopsia .btn-categoria {
+    border-color: #111111 !important;
+}
+
+body.modo-acromatopsia .etiqueta {
+    background: #dddddd !important;
+    color: #111111 !important;
+}
+
+body.modo-acromatopsia .autores {
+    background: #dddddd !important;
+}
+
+body.modo-acromatopsia .card,
+body.modo-acromatopsia .autor {
+    background: #ffffff !important;
+    color: #111111 !important;
+}
+
+
+
+body.modo-protanopia .hero-quienesomos,
+body.modo-protanopia .btn-admin-header,
+body.modo-protanopia .btn-principal,
+body.modo-protanopia .opcion-acceso.activa,
+body.modo-protanopia .menu-usuario button {
+    background: var(--ac-principal) !important;
+    color: #ffffff !important;
+}
+body.modo-protanopia .btn-acceso-header,
+body.modo-protanopia .btn-secundario,
+body.modo-protanopia .usuario-flotante > button,
+body.modo-protanopia .buscador button {
+    background: var(--ac-acento) !important;
+    color: var(--ac-acento-texto) !important;
+}
+body.modo-protanopia .bloque i,
+body.modo-protanopia .pm-card-dato i,
+body.modo-protanopia .pm-comentarios summary i,
+body.modo-protanopia .pm-com-datos i {
+    color: var(--ac-acento) !important;
+}
+body.modo-protanopia .bloque h2,
+body.modo-protanopia .equipo h2,
+body.modo-protanopia .proyecto h2,
+body.modo-protanopia .pm-encabezado h2,
+body.modo-protanopia .pm-formulario h3,
+body.modo-protanopia .pm-consultas h3,
+body.modo-protanopia .pm-comentarios h3,
+body.modo-protanopia .pm-card-header h4,
+body.modo-protanopia .modal-acceso-caja h2 {
+    color: var(--ac-oscuro) !important;
+}
+body.modo-protanopia .equipo {
+    background: var(--ac-claro) !important;
+}
+
+
+body.modo-deuteranopia .hero-quienesomos,
+body.modo-deuteranopia .btn-admin-header,
+body.modo-deuteranopia .btn-principal,
+body.modo-deuteranopia .opcion-acceso.activa,
+body.modo-deuteranopia .menu-usuario button {
+    background: var(--ac-principal) !important;
+    color: #ffffff !important;
+}
+body.modo-deuteranopia .btn-acceso-header,
+body.modo-deuteranopia .btn-secundario,
+body.modo-deuteranopia .usuario-flotante > button,
+body.modo-deuteranopia .buscador button {
+    background: var(--ac-acento) !important;
+    color: var(--ac-acento-texto) !important;
+}
+body.modo-deuteranopia .bloque i,
+body.modo-deuteranopia .pm-card-dato i,
+body.modo-deuteranopia .pm-comentarios summary i,
+body.modo-deuteranopia .pm-com-datos i {
+    color: var(--ac-acento) !important;
+}
+body.modo-deuteranopia .bloque h2,
+body.modo-deuteranopia .equipo h2,
+body.modo-deuteranopia .proyecto h2,
+body.modo-deuteranopia .pm-encabezado h2,
+body.modo-deuteranopia .pm-formulario h3,
+body.modo-deuteranopia .pm-consultas h3,
+body.modo-deuteranopia .pm-comentarios h3,
+body.modo-deuteranopia .pm-card-header h4,
+body.modo-deuteranopia .modal-acceso-caja h2 {
+    color: var(--ac-oscuro) !important;
+}
+body.modo-deuteranopia .equipo {
+    background: var(--ac-claro) !important;
+}
+
+
+body.modo-tritanopia .hero-quienesomos,
+body.modo-tritanopia .btn-admin-header,
+body.modo-tritanopia .btn-principal,
+body.modo-tritanopia .opcion-acceso.activa,
+body.modo-tritanopia .menu-usuario button {
+    background: var(--ac-principal) !important;
+    color: #ffffff !important;
+}
+body.modo-tritanopia .btn-acceso-header,
+body.modo-tritanopia .btn-secundario,
+body.modo-tritanopia .usuario-flotante > button,
+body.modo-tritanopia .buscador button {
+    background: var(--ac-acento) !important;
+    color: var(--ac-acento-texto) !important;
+}
+body.modo-tritanopia .bloque i,
+body.modo-tritanopia .pm-card-dato i,
+body.modo-tritanopia .pm-comentarios summary i,
+body.modo-tritanopia .pm-com-datos i {
+    color: var(--ac-acento) !important;
+}
+body.modo-tritanopia .bloque h2,
+body.modo-tritanopia .equipo h2,
+body.modo-tritanopia .proyecto h2,
+body.modo-tritanopia .pm-encabezado h2,
+body.modo-tritanopia .pm-formulario h3,
+body.modo-tritanopia .pm-consultas h3,
+body.modo-tritanopia .pm-comentarios h3,
+body.modo-tritanopia .pm-card-header h4,
+body.modo-tritanopia .modal-acceso-caja h2 {
+    color: var(--ac-oscuro) !important;
+}
+body.modo-tritanopia .equipo {
+    background: var(--ac-claro) !important;
+}
+
+
+body.modo-acromatopsia .hero-quienesomos,
+body.modo-acromatopsia .btn-admin-header,
+body.modo-acromatopsia .btn-principal,
+body.modo-acromatopsia .opcion-acceso.activa,
+body.modo-acromatopsia .menu-usuario button {
+    background: #111111 !important;
+    color: #ffffff !important;
+}
+body.modo-acromatopsia .btn-acceso-header,
+body.modo-acromatopsia .btn-secundario,
+body.modo-acromatopsia .usuario-flotante > button,
+body.modo-acromatopsia .buscador button {
+    background: #000000 !important;
+    color: #ffffff !important;
+}
+body.modo-acromatopsia .bloque i,
+body.modo-acromatopsia .pm-card-dato i,
+body.modo-acromatopsia .pm-comentarios summary i,
+body.modo-acromatopsia .pm-com-datos i {
+    color: #111111 !important;
+}
+body.modo-acromatopsia .bloque h2,
+body.modo-acromatopsia .equipo h2,
+body.modo-acromatopsia .proyecto h2,
+body.modo-acromatopsia .pm-encabezado h2,
+body.modo-acromatopsia .pm-formulario h3,
+body.modo-acromatopsia .pm-consultas h3,
+body.modo-acromatopsia .pm-comentarios h3,
+body.modo-acromatopsia .pm-card-header h4,
+body.modo-acromatopsia .modal-acceso-caja h2 {
+    color: #111111 !important;
+}
+body.modo-acromatopsia .equipo {
+    background: #dddddd !important;
+}
+
+
+@media (max-width: 600px) {
+    .accesibilidad {
+        left: 12px;
+        bottom: 15px;
+    }
+
+    #boton-accesibilidad {
+        padding: 11px 14px;
+        font-size: 14px;
+    }
+
+    #menu-accesibilidad {
+        width: 220px;
+    }
+}
+
+.logo h1 a,
+.logo h1 a:visited {
+    color: inherit;
+    text-decoration: none;
+}
