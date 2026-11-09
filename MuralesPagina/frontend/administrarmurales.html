@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar Murales - Murales Mercedes</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/panelmurales.css?v=2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/accesibilidad.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+        <h1><a href="index (1).html">MURALES <span>MERCEDES</span></a></h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="muraleshistoria.html">Murales</a></li>
+            <li><a href="quienesomos.html">Quiénes Somos ?</a></li>
+            <li><a href="reporte.html">Reporte</a></li>
+            <li><a href="administrarmurales.html">Administrar Murales</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="panel-murales">
+
+    <section class="pm-encabezado">
+        <h2>Administrar Murales</h2>
+        <p>Alta, modificación, consulta y eliminación de murales. Lo que guardes acá aparece automáticamente como una tarjeta más en las páginas de <a href="muraleshistoria.html">Historia</a>, <a href="muralesnaturaleza.html">Naturaleza</a> o <a href="muralescultura.html">Cultura</a>, según la categoría que elijas.</p>
+    </section>
+
+    <div class="pm-tabs" id="pm-apartados" style="margin-bottom:30px;">
+        <button type="button" class="pm-tab activa" data-apartado="murales"><i class="fas fa-paint-brush"></i> Murales</button>
+        <button type="button" class="pm-tab" data-apartado="comentarios"><i class="fas fa-comments"></i> Comentarios</button>
+        <button type="button" class="pm-tab" data-apartado="reportes"><i class="fas fa-flag"></i> Reportes</button>
+        <button type="button" class="pm-tab" data-apartado="autores"><i class="fas fa-user-pen"></i> Autores</button>
+    </div>
+
+    <section class="pm-formulario" data-apartado="murales">
+        <h3 id="pm-form-titulo"><i class="fas fa-paint-brush"></i> Alta de mural</h3>
+
+        <p id="pm-form-mensaje" class="pm-mensaje" hidden></p>
+
+        <form id="form-mural">
+            <input type="hidden" id="mural-id">
+
+            <div class="pm-grid">
+                <div class="pm-campo">
+                    <label for="mural-nombre">Nombre del mural *</label>
+                    <input type="text" id="mural-nombre" required maxlength="40" placeholder="Ej: Raíces">
+                </div>
+
+                <div class="pm-campo">
+                    <label for="mural-autor">Autor *</label>
+                    <input type="text" id="mural-autor" required maxlength="100" list="lista-autores-mural" autocomplete="off" placeholder="Elegí un autor registrado">
+                    <datalist id="lista-autores-mural"></datalist>
+                </div>
+
+                <div class="pm-campo">
+                    <label for="mural-categoria">Categoría (define en qué página aparece) *</label>
+                    <select id="mural-categoria" required>
+                        <option value="" disabled selected>Elegir categoría...</option>
+                        <option value="Historia">Historia</option>
+                        <option value="Naturaleza">Naturaleza</option>
+                        <option value="Cultura">Cultura</option>
+                    </select>
+                </div>
+
+                <div class="pm-campo">
+                    <label for="mural-estado">Estado del mural *</label>
+                    <input type="text" id="mural-estado" required maxlength="20" list="lista-estados" placeholder="Ej: Bueno">
+                    <datalist id="lista-estados">
+                        <option value="Bueno">
+                        <option value="Muy bueno">
+                        <option value="Regular">
+                        <option value="Malo">
+                        <option value="Obstruido">
+                        <option value="Restaurado">
+                    </datalist>
+                </div>
+
+                <div class="pm-campo">
+                    <label for="mural-direccion">Dirección *</label>
+                    <input type="text" id="mural-direccion" required maxlength="150" placeholder="Ej: 18 de Julio y Giménez">
+                </div>
+
+                <div class="pm-campo">
+                    <label for="mural-fecha">Fecha de creación</label>
+                    <input type="date" id="mural-fecha">
+                </div>
+
+                <div class="pm-campo pm-campo-full">
+                    <a href="https://proyecto-trazo-d.imgbb.com/">Agregar Imagen</a>
+                    <label for="mural-imagen">Imagen (URL o ruta, ej: imagenes/foto.jpeg)</label>
+                    <input type="text" id="mural-imagen" placeholder="imagenes/mimural.jpeg o https://...">
+                </div>
+
+                <div class="pm-campo pm-campo-full">
+                    <label for="mural-descripcion">Descripción</label>
+                    <textarea id="mural-descripcion" rows="3" maxlength="500" placeholder="Breve descripción del mural..."></textarea>
+                </div>
+            </div>
+
+            <div class="pm-botones-form">
+                <button type="submit" class="btn naranja" id="pm-btn-guardar">
+                    <i class="fas fa-save"></i> Guardar mural
+                </button>
+                <button type="button" class="btn transparente-oscuro" id="pm-btn-cancelar" hidden>
+                    <i class="fas fa-times"></i> Cancelar edición
+                </button>
+            </div>
+        </form>
+    </section>
+
+    <section class="pm-comentarios" id="pm-comentarios" data-apartado="comentarios">
+        <h3><i class="fas fa-comments"></i> Moderación de comentarios</h3>
+        <p class="pm-contador">Los comentarios de los usuarios quedan <strong>para revisar</strong> y no se muestran en el sitio hasta que los publiques.</p>
+
+        <div class="pm-tabs" id="pc-tabs">
+            <button type="button" class="pm-tab" data-estado="para revisar">Para revisar <span id="pc-n-para-revisar">0</span></button>
+            <button type="button" class="pm-tab" data-estado="publicado">Publicados <span id="pc-n-publicado">0</span></button>
+            <button type="button" class="pm-tab" data-estado="rechazado">Rechazados <span id="pc-n-rechazado">0</span></button>
+        </div>
+
+        <p id="pc-mensaje" class="pm-mensaje" hidden></p>
+        <div id="pc-lista" class="pc-lista"></div>
+        <p id="pc-vacio" class="pm-sin-resultados" hidden>No hay comentarios en este estado.</p>
+    </section>
+
+    <section class="pm-comentarios" id="pm-reportes" data-apartado="reportes">
+        <h3><i class="fas fa-flag"></i> Reportes de los usuarios</h3>
+        <p class="pm-contador">Quejas y avisos enviados por los usuarios desde la página de Reporte. Solo los administradores pueden verlos.</p>
+
+        <div class="pm-tabs" id="pr-tabs">
+            <button type="button" class="pm-tab activa" data-vista="pendientes">Pendientes <span id="pr-n-pendientes">0</span></button>
+            <button type="button" class="pm-tab" data-vista="resueltos">Resueltos <span id="pr-n-resueltos">0</span></button>
+        </div>
+
+        <p id="pr-mensaje" class="pm-mensaje" hidden></p>
+        <div id="pr-lista" class="pc-lista"></div>
+        <p id="pr-vacio" class="pm-sin-resultados" hidden>No hay reportes en esta sección.</p>
+    </section>
+
+    <section class="pm-consultas" data-apartado="murales">
+        <h3><i class="fas fa-search"></i> Consulta de murales</h3>
+
+        <div class="pm-filtros">
+            <input type="text" id="pm-buscar" placeholder="Buscar por nombre, autor o dirección...">
+
+            <select id="pm-filtro-categoria">
+                <option value="">Todas las categorías</option>
+                <option value="Historia">Historia</option>
+                <option value="Naturaleza">Naturaleza</option>
+                <option value="Cultura">Cultura</option>
+            </select>
+        </div>
+
+        <p id="pm-contador" class="pm-contador"></p>
+
+        <div class="grid-murales" id="pm-lista-murales"></div>
+
+        <p id="pm-sin-resultados" class="pm-sin-resultados" hidden>No se encontraron murales con esos criterios.</p>
+    </section>
+
+    <section class="pm-formulario" id="pm-autores" data-apartado="autores">
+        <h3 id="aa-form-titulo"><i class="fas fa-user-pen"></i> Alta de autor</h3>
+        <p class="pm-contador">Alta, modificación, consulta y eliminación de perfiles de autores. Lo que guardes acá aparece como tarjeta en <a href="autores.html">Autores</a>.</p>
+
+        <p id="aa-form-mensaje" class="pm-mensaje" hidden></p>
+
+        <form id="form-autor">
+            <input type="hidden" id="autor-id">
+
+            <div class="pm-grid">
+                <div class="pm-campo">
+                    <label for="autor-nombre">Nombre *</label>
+                    <input type="text" id="autor-nombre" required maxlength="30">
+                </div>
+
+                <div class="pm-campo">
+                    <label for="autor-apellido">Apellido</label>
+                    <input type="text" id="autor-apellido" maxlength="30">
+                </div>
+
+                <div class="pm-campo">
+                    <label for="autor-tipo">Tipo</label>
+                    <input type="text" id="autor-tipo" maxlength="15" list="lista-tipos-autor">
+                    <datalist id="lista-tipos-autor"></datalist>
+                </div>
+
+                <div class="pm-campo">
+                    <label for="autor-usuario">Redes <span style="font-weight:normal;color:#6b7a8d;">(opcional)</span></label>
+                    <input type="text" id="autor-usuario" maxlength="255" autocomplete="off" inputmode="url" placeholder="Links separados por coma. Ej: https://instagram.com/usuario">
+                </div>
+            </div>
+
+            <div class="pm-botones-form">
+                <button type="submit" class="btn naranja" id="aa-btn-guardar">
+                    <i class="fas fa-save"></i> Guardar autor
+                </button>
+                <button type="button" class="btn transparente-oscuro" id="aa-btn-cancelar" hidden>
+                    <i class="fas fa-times"></i> Cancelar edición
+                </button>
+            </div>
+        </form>
+    </section>
+
+    <section class="pm-consultas" data-apartado="autores">
+        <h3><i class="fas fa-search"></i> Consulta de autores</h3>
+
+        <div class="pm-filtros">
+            <input type="text" id="aa-buscar" placeholder="Buscar por nombre, apellido o redes...">
+
+            <select id="aa-filtro-tipo">
+                <option value="">Todos los tipos</option>
+            </select>
+        </div>
+
+        <p id="aa-contador" class="pm-contador"></p>
+
+        <div class="grid-murales" id="aa-lista-autores"></div>
+
+        <p id="aa-sin-resultados" class="pm-sin-resultados" hidden>No se encontraron autores con esos criterios.</p>
+    </section>
+
+</main>
+
+<footer>
+    <h3>MURALES MERCEDES</h3>
+    <p>Proyecto Integrador 2026<br>Escuela Técnica Superior Pedro Blanes Viale</p>
+    <div class="redes">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-youtube"></i>
+    </div>
+</footer>
+
+
+<script src="js/apartados.js?v=2"></script>
+<script src="js/administrarmurales.js"></script>
+<script src="js/administrarautores.js"></script>
+<script src="js/comentarios_admin.js"></script>
+<script src="js/reportes_admin.js"></script>
+
+    <script src="js/auth.js?v=2"></script>
+    <script src="js/accesibilidad.js?v=2"></script>
+</body>
+</html>

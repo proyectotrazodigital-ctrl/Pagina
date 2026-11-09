@@ -1,0 +1,131 @@
+
+.modal-sesion {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.65);
+    z-index: 3000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.modal-sesion.abierto { display: flex; }
+.caja-sesion {
+    width: 100%;
+    max-width: 430px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 28px;
+    position: relative;
+    box-shadow: 0 10px 35px rgba(0,0,0,.3);
+}
+.cerrar-sesion {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    border: 0;
+    background: transparent;
+    color: #777;
+    font-size: 28px;
+    cursor: pointer;
+}
+.caja-sesion h2 { margin: 0 0 6px; color: #003b78; }
+.caja-sesion > p { margin-top: 0; color: #555; }
+.opciones-sesion { display: flex; gap: 8px; margin: 20px 0; }
+.opcion-sesion {
+    flex: 1;
+    border: 2px solid #003b78;
+    background: #fff;
+    color: #003b78;
+    padding: 10px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.opcion-sesion.activa, .opcion-sesion:hover { background: #003b78; color: #fff; }
+.form-sesion { display: flex; flex-direction: column; gap: 8px; }
+.form-sesion input {
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+.boton-sesion {
+    margin-top: 8px;
+    padding: 12px;
+    border: 0;
+    border-radius: 6px;
+    background: #ff6600;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+.boton-sesion:hover { background: #e85b00; }
+.subopcion-admin {
+    margin-top: 14px;
+    background: none;
+    border: 0;
+    color: #003b78;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.mensaje-sesion { min-height: 20px; margin: 10px 0; font-weight: bold; }
+.mensaje-sesion.error { color: #b00020; }
+.mensaje-sesion.ok { color: #1d6b32; }
+
+/* Icono fijo que aparece solamente cuando hay una sesión */
+.usuario-flotante { position: fixed; right: 22px; top: 50%; transform: translateY(-50%); z-index: 2500; display: none; }
+.usuario-flotante.visible { display: block; }
+.boton-usuario-flotante {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 0;
+    background: #ff6600;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,.3);
+}
+.menu-usuario-flotante {
+    display: none;
+    position: absolute;
+    right: 62px;
+    top: 0;
+    width: 210px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 14px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.25);
+}
+.menu-usuario-flotante.abierto { display: block; }
+.menu-usuario-flotante strong { display: block; margin-bottom: 10px; color: #003b78; }
+.menu-usuario-flotante a, .menu-usuario-flotante button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 9px 10px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 0;
+    text-decoration: none;
+    text-align: left;
+    cursor: pointer;
+}
+.menu-usuario-flotante a { background: #003b78; color: #fff; }
+.menu-usuario-flotante button { background: #eee; color: #222; }
+
+.btn-iniciar-header {
+    background: #ff6600;
+    color: #fff;
+    padding: 9px 16px;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 10px;
+}
+@media (max-width: 992px) {
+    .usuario-flotante { right: 12px; }
+    .menu-usuario-flotante { right: 58px; }
+}
